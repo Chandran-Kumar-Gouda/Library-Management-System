@@ -13,23 +13,9 @@ public class Book {
         this.copiesAvailable = copiesAvailable;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getCopiesAvailable() {
-        return copiesAvailable;
-    }
-
-    public void setCopiesAvailable(int copiesAvailable) {
-        this.copiesAvailable = copiesAvailable;
-    }
+    public String getIsbn() { return isbn; }
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public int getCopiesAvailable() { return copiesAvailable; }
+    public void setCopiesAvailable(int copies) { this.copiesAvailable = copies; }
 }

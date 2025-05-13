@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 public class BookDAO {
-    private static final String BOOK_FILE = "data/books.txt";
+    private static final String BOOK_FILE = System.getProperty("user.dir") + "/data/books.txt";
 
     public List<Book> getBooks() {
         List<Book> books = new ArrayList<>();
@@ -22,6 +22,12 @@ public class BookDAO {
         return books;
     }
 
+    public void addBook(Book book) {
+        List<Book> books = getBooks();
+        books.add(book);
+        writeBooksToFile(books);
+    }
+
     public void updateBookCopies(String isbn, int copies) {
         List<Book> books = getBooks();
         for (Book book : books) {
@@ -36,7 +42,8 @@ public class BookDAO {
     private void writeBooksToFile(List<Book> books) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(BOOK_FILE))) {
             for (Book book : books) {
-                writer.write(book.getIsbn() + "," + book.getTitle() + "," + book.getAuthor() + "," + book.getCopiesAvailable() + "\n");
+                writer.write(book.getIsbn() + "," + book.getTitle() + "," + book.getAuthor() + "," + book.getCopiesAvailable());
+                writer.newLine();
             }
         } catch (IOException e) {
             System.out.println("Error writing books.");

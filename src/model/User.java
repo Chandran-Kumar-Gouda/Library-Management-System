@@ -4,8 +4,8 @@ public class User {
     private String userId;
     private String name;
     private String password;
-    private String userType; // "LIBRARIAN" or "MEMBER"
-    
+    private String userType; // MEMBER or LIBRARIAN
+
     public User(String userId, String name, String password, String userType) {
         this.userId = userId;
         this.name = name;
@@ -13,19 +13,8 @@ public class User {
         this.userType = userType;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public String getUserId() { return userId; }
+    public String getName() { return name; }
+    public String getPassword() { return password; }
+    public String getUserType() { return userType; }
 }

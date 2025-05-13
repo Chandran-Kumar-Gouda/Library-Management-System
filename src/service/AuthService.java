@@ -1,20 +1,12 @@
 package service;
 
-import model.User;
 import dao.UserDAO;
+import model.User;
 
 public class AuthService {
-    private UserDAO userDAO;
-
-    public AuthService() {
-        userDAO = new UserDAO();
-    }
+    private UserDAO userDAO = new UserDAO();
 
     public User authenticate(String userId, String password) {
-        User user = userDAO.getUser(userId);
-        if (user != null && user.getPassword().equals(password)) {
-            return user;
-        }
-        return null;
+        return userDAO.getUser(userId, password);
     }
 }
