@@ -1,26 +1,21 @@
 package service;
 
 import model.Book;
-import java.util.Map;
+import dao.BookDAO;
+import java.util.List;
 
 public class BookService {
-    private Map<String, Book> books;
+    private BookDAO bookDAO;
 
-    public BookService(Map<String, Book> books) {
-        this.books = books;
+    public BookService() {
+        bookDAO = new BookDAO();
     }
 
-    public void addBook(Book book) {
-        books.put(book.getIsbn(), book);
+    public List<Book> getAllBooks() {
+        return bookDAO.getBooks();
     }
 
-    public void listBooks() {
-        for (Book book : books.values()) {
-            System.out.println(book);
-        }
-    }
-
-    public Book getBookByIsbn(String isbn) {
-        return books.get(isbn);
+    public void updateBookCopies(String isbn, int copies) {
+        bookDAO.updateBookCopies(isbn, copies);
     }
 }

@@ -1,0 +1,15 @@
+B101,The Alchemist,Paulo Coelho,5
+B102,2 States,Chetan Bhagat,3
+B103,The God of Small Things,Arundhati Roy,4
+B104,Wings of Fire,A. P. J. Abdul Kalam,6
+B105,Train to Pakistan,Khushwant Singh,2
+B106,The White Tiger,Aravind Adiga,4
+B107,Midnight's Children,Salman Rushdie,3
+B108,Five Point Someone,Chetan Bhagat,5
+B109,Interpreter of Maladies,Jhumpa Lahiri,2
+B110,The Palace of Illusions,Chitra Banerjee Divakaruni,6
+B111,The Guide,R. K. Narayan,4
+B112,The Inheritance of Loss,Kiran Desai,3
+B113,Night Train at Deoli,Ruskin Bond,7
+B114,The Secret of the Nagas,Amish Tripathi,5
+B115,Serious Men,Manu Joseph,2

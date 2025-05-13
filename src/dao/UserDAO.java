@@ -1,27 +1,25 @@
 package dao;
 
-import model.*;
-
+import model.User;
 import java.io.*;
 import java.util.*;
 
 public class UserDAO {
-    public static Map<String, User> loadUsers(String path) {
-        Map<String, User> users = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+    private static final String USER_FILE = "data/users.txt";
+
+    public User getUser(String userId) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(USER_FILE))) {
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                String role = parts[0];
-                if (role.equals("LIBRARIAN")) {
-                    users.put(parts[1], new Librarian(parts[1], parts[2], parts[3]));
-                } else if (role.equals("MEMBER")) {
-                    users.put(parts[1], new Member(parts[1], parts[2], parts[3]));
+                if (parts[0].equalsIgnoreCase(userId)) {
+                    return new User(parts[0], parts[2], parts[3], parts[1]);
                 }
             }
         } catch (IOException e) {
             System.out.println("Error reading users.");
+            e.printStackTrace();
         }
-        return users;
+        return null;
     }
 }

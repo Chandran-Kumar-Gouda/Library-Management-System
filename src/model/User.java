@@ -1,22 +1,31 @@
 package model;
 
-public abstract class User {
-    protected String id;
-    protected String name;
-    protected String password;
-
-    public User(String id, String name, String password) {
-        this.id = id;
+public class User {
+    private String userId;
+    private String name;
+    private String password;
+    private String userType; // "LIBRARIAN" or "MEMBER"
+    
+    public User(String userId, String name, String password, String userType) {
+        this.userId = userId;
         this.name = name;
         this.password = password;
+        this.userType = userType;
     }
 
-    public String getId() { return id; }
-    public String getName() { return name; }
-
-    public boolean authenticate(String inputPassword) {
-        return password.equals(inputPassword);
+    public String getUserId() {
+        return userId;
     }
 
-    public abstract String getRole();
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

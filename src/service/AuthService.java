@@ -1,18 +1,18 @@
 package service;
 
 import model.User;
-import java.util.Map;
+import dao.UserDAO;
 
 public class AuthService {
-    private Map<String, User> users;
+    private UserDAO userDAO;
 
-    public AuthService(Map<String, User> users) {
-        this.users = users;
+    public AuthService() {
+        userDAO = new UserDAO();
     }
 
-    public User login(String id, String password) {
-        User user = users.get(id);
-        if (user != null && user.authenticate(password)) {
+    public User authenticate(String userId, String password) {
+        User user = userDAO.getUser(userId);
+        if (user != null && user.getPassword().equals(password)) {
             return user;
         }
         return null;

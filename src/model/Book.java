@@ -4,26 +4,32 @@ public class Book {
     private String isbn;
     private String title;
     private String author;
-    private int copies;
+    private int copiesAvailable;
 
-    public Book(String isbn, String title, String author, int copies) {
+    public Book(String isbn, String title, String author, int copiesAvailable) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
-        this.copies = copies;
+        this.copiesAvailable = copiesAvailable;
     }
 
-    public String getIsbn() { return isbn; }
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public int getCopies() { return copies; }
-
-    public void setCopies(int copies) {
-        this.copies = copies;
+    public String getIsbn() {
+        return isbn;
     }
 
-    @Override
-    public String toString() {
-        return isbn + " - " + title + " by " + author + " (" + copies + " copies)";
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getCopiesAvailable() {
+        return copiesAvailable;
+    }
+
+    public void setCopiesAvailable(int copiesAvailable) {
+        this.copiesAvailable = copiesAvailable;
     }
 }
